@@ -223,18 +223,20 @@ def six(input):
 	stored_letter2 = ""
 
 	for letter in input:
-		if stored_letter1 != "" and (letter != "i" and letter != "e" and letter != "c"):
-			stored_letter1 = ""
+		if stored_letter1 == "" and (letter == "i" or letter == "e" or letter == "c"):
+			stored_letter1 = letter
+		elif stored_letter1 == "i" and letter == "e":
+			return True
+		elif stored_letter1 == "c" and letter == "e":
+			stored_letter2 = letter
+		elif stored_letter1 == "c" and stored_letter2 == "e" and letter == "i":
+			return True
+		elif letter == "i" or letter == "e" or letter == "c":
+			stored_letter1 = letter
 			stored_letter2 =""
 		else:
-			if stored_letter1 == "" and (letter == "i" or letter == "e" or letter == "c"):
-				stored_letter1 = letter
-			elif stored_letter1 == "i" and letter == "e":
-				return True
-			elif stored_letter1 == "c" and letter == "e":
-				stored_letter2 = letter
-			elif stored_letter1 == "c" and stored_letter2 == "e" and letter == "i":
-				return True
+			stored_letter1 = ""
+			stored_letter2 =""
 
 	return False
 
