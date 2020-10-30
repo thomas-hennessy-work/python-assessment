@@ -69,7 +69,14 @@ def one(input1, input2):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-	return ""
+
+	lower_input = input.lower()
+	split_input = lower_input.split("bert")
+
+	if len(split_input) == 3:
+		return split_input[1]
+	else:
+		return ""
 
 
 
