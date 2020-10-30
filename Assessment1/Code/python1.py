@@ -176,7 +176,28 @@ def four(arg1):
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return []
+
+	split_input = input.split(",")
+
+	rtrn_list = []
+
+	count = 0
+	owner = ""
+
+	while count < len(split_input):
+		if (count % 4 == 0):
+			owner = split_input[count]
+
+		if (count % 2 == 0) and (count != 0) and (count % 4 != 0):
+			if (split_input[count] == "False") and (owner not in rtrn_list):
+				rtrn_list.append(owner)
+				owner = ""
+			else:
+				owner = ""
+		
+		count += 1
+
+	return rtrn_list
 
 	# <QUESTION 6>
 
