@@ -320,6 +320,7 @@ def eight(input):
 def nine(inputString, char):
 
 	string_no_whtspc = inputString.replace(" ","")
+
 	if char in string_no_whtspc:
 		return string_no_whtspc.index(char) + 1
 	else:
@@ -343,4 +344,12 @@ def nine(inputString, char):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def ten(string, int, char):
+
+	sanitized_str = string.replace(" ","").lower()
+
+	if int-1 < len(sanitized_str):
+		if sanitized_str[int-1] == char :
+			return True
+
 	return False
+
