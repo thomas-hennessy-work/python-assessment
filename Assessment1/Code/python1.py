@@ -318,7 +318,12 @@ def eight(input):
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-	return -1
+
+	string_no_whtspc = inputString.replace(" ","")
+	if char in string_no_whtspc:
+		return string_no_whtspc.index(char) + 1
+	else:
+		return -1
 
 	# <QUESTION 10>
 
