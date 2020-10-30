@@ -135,7 +135,20 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	return 0
+
+	split_arg = arg1.split()
+
+	highest_vlaue = 0
+
+	for number in split_arg:
+		current_value = 0
+		for solo_number in number:
+			current_value += int(solo_number)
+		
+		if current_value > highest_vlaue:
+			highest_vlaue = current_value
+
+	return highest_vlaue
 
 	# <QUESTION 5>
 
