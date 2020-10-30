@@ -219,31 +219,23 @@ def five(input):
 
 def six(input):
 
-	stored_letter = ""
+	stored_letter1 = ""
+	stored_letter2 = ""
 
 	for letter in input:
-		# if letter == "i" or letter == "e" or letter == "c":
-		# 	if stored_letter == "":
-		# 		stored_letter = letter
-		# 	elif stored_letter == "c" and letter == "e":
-		# 		return True
-		# 	elif stored_letter == "i" and letter == "e":
-		# 		return True
-		# 	else:
-		# 		return False
-		if stored_letter != "" and (letter != "i" or letter != "e" or letter != "c"):
-			stored_letter = ""
+		if stored_letter1 != "" and (letter != "i" and letter != "e" and letter != "c"):
+			stored_letter1 = ""
+			stored_letter2 =""
 		else:
-			if letter == "i" or letter == "e" or letter == "c":
-				if stored_letter == "":
-					stored_letter = letter
-				elif stored_letter == "c" and letter == "e":
-					return True
-				elif stored_letter == "i" and letter == "e":
-					return True
-				else:
-					return False
-	
+			if stored_letter1 == "" and (letter == "i" or letter == "e" or letter == "c"):
+				stored_letter1 = letter
+			elif stored_letter1 == "i" and letter == "e":
+				return True
+			elif stored_letter1 == "c" and letter == "e":
+				stored_letter2 = letter
+			elif stored_letter1 == "c" and stored_letter2 == "e" and letter == "i":
+				return True
+
 	return False
 
 	# <QUESTION 7>
