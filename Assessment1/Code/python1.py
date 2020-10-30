@@ -261,7 +261,16 @@ def six(input):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def seven(input):
-    return 0
+
+	lower_input = input.lower()
+
+	vowel_count = 0
+
+	for letter in lower_input:
+		if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+			vowel_count += 1
+
+	return vowel_count
 
 	# <QUESTION 8>
 
