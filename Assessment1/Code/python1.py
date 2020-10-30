@@ -288,7 +288,16 @@ def seven(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-	return 1
+
+	count = input
+
+	total = 1
+
+	while count > 1:
+		total = total * count
+		count -=1
+
+	return total
 
 	# <QUESTION 9>
 
